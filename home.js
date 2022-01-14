@@ -21,9 +21,11 @@
     'Welcome back, Andrew'
 */
 
-//CODE HERE
+const greetUser = (username) => `Welcome back ${username}!`
 
+let greeting = greetUser('Freya')
 
+console.log(greeting)
 
 
 
@@ -49,8 +51,15 @@
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-//CODE HERE
+function canWeDeliver (zipCode) {
+    if (deliveryAreaZipCodes.includes(zipCode)){
+        return `You're in our delivery zone!`
+    } else {
+        return `Sorry, we can't deliver to that address.`
+    }
+}
 
+console.log(canWeDeliver(85205))
 
 
 /* 
@@ -70,8 +79,20 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE
+function canWeDeliverTwo(zipCode) {
+    let haszipCode = false;
+    deliveryAreaZipCodes.forEach((element) => {
+      if (element === zipCode) 
+          haszipCode = true; 
+        });
+    if (haszipCode) {
+        console.log(`You're in our delivery zone!`)
+    } else {
+      console.log( `Sorry, we can't deliver to that address.`)
+    }
+}
 
+canWeDeliverTwo(84120);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -86,7 +107,7 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     Read on for more instructions.
 */
 
-const deals = [
+let deals = [
     {
         title: '15% Off!', 
         desc: 'Applied to your entire order when you spend $30 or more'
@@ -105,11 +126,10 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
-
-//CODE HERE
-
-
-
+let newDeal = ("10")
+deals[0].title = deals[0].title
+.replace(`15`, newDeal);
+console.log(deals)
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -123,4 +143,8 @@ const deals = [
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+let newMonth = "April"
+
+deals[1].desc = deals[1].desc.replace('March', newMonth)
+
+console.log(deals)
