@@ -29,8 +29,14 @@
     user might filter by, like 'gluten-free' or
     'kids'
 */
-
-//CODE HERE
+const pizza = {
+name: 'Ultimate Supreme Pizza', 
+price: 16.99,
+category: 'entree', 
+popularity: 2, 
+rating: 4.5,
+tags: ['best deal', 'meat', 'veggies', 'family-size']
+}
 
 
 
@@ -42,7 +48,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
+console.log (pizza.popularity)
 
 
 /*
@@ -52,7 +58,7 @@
     get the value.
 */
 
-//CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -62,7 +68,9 @@
     Print the value of your new price variable.
 */
 
-//CODE HERE
+const {price} = pizza;
+
+console.log(price)
 
 
 /*
@@ -72,7 +80,8 @@
     Print the value of your category variable. 
 */
 
-//CODE HERE
+const {category} = pizza;
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,7 +96,47 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
+let foodArr = [ {
+    name: 'PepperoniPizza', 
+    price: 6.99,
+    category: 'entree', 
+    popularity: 1, 
+    rating: 5,
+    tags: ['pepperoni', 'value', 'cheesy', 'discount']
+},
+    {
+     name: 'Buffalo Wings', 
+    price: 4.99,
+    category: 'appetizer', 
+    popularity: 6, 
+    rating: 3.5,
+    tags: ['spicy', 'chicken', 'bone-less', 'sides']
+    }, 
+    {
+    name: 'Cheesy Breadsticks', 
+    price: 7.99,
+    category: 'appetizer', 
+    popularity: 8, 
+    rating: 4.3,
+    tags: ['breadsticks', 'cheesy', 'sidedish', 'value']
+    }, {
+        name: 'Super Veggie Pizza', 
+    price: 12.99,
+    category: 'entree', 
+    popularity: 12, 
+    rating: 2.6,
+    tags: ['vegetarian', 'gluten-free', 'vegetables', 'value']
+    },
+    {
+        name: 'Hawaiian Delight', 
+        price: 13.99,
+        category: 'entree', 
+        popularity: 7, 
+        rating: 3.8,
+        tags: ['pineapple', 'sweet', 'savory', 'ham']
+    }
+]
+
 
 
 
@@ -104,8 +153,11 @@
 */
 
 //CODE HERE
+const cb = (element) => element.tags.includes('value');
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(cb)
+
+console.log(filteredFood)
 
 
 

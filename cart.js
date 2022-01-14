@@ -35,8 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce(function(accumulator, element){
+    return accumulator + element.price;
+},0)
 
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -53,9 +56,11 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
-
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    let taxTotal = cartTotal * tax;
+    return cartTotal + taxTotal - couponValue;
+}
+console.log(calcFinalPrice(35.99, .06, 5.00));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +83,9 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    The properties I've given my customer object are all things that a restaurant would need to know to create a general customer profile. Since they are in the delivery business, knowing the address is key
+    as well as knowing the telephone number to store customer information or contact them about an order. The email is where a confirmation email would go for delivery receipt and updates and if the restaurant wants 
+    to do a membership or rewards program, it would be important to know so they could add whatever rewards the customer accumulated on that order. 
 
 */
 
@@ -87,4 +94,10 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    name: 'Customer First and Last' ,
+    address: 'Address',
+    telephone: '801-969-0351',
+    email: 'generalemail@gmail.com',
+    membership: true,
+}
